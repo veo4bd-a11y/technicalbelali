@@ -1,89 +1,1460 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>শিক্ষাঘর - বাংলাদেশি স্কুল শিক্ষার জন্য ডিজিটাল প্ল্যাটফর্ম</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-banner.png">
+  <link rel="preload" as="image" href="./assets/images/hero-abs-1.png" media="min-width(768px)">
+  <link rel="preload" as="image" href="./assets/images/hero-abs-2.png" media="min-width(768px)">
+
+  <style>
+    :root {
+      --font-bangla: 'Hind Siliguri', sans-serif;
+    }
+    
+    body {
+      font-family: var(--font-bangla), 'Urbanist', sans-serif;
+    }
+    
+    .section-title, .h1, .h2, .h3, .card-title, .item-title {
+      font-family: var(--font-bangla), 'Urbanist', sans-serif;
+      font-weight: 700;
+    }
+    
+    .bangla-text {
+      font-family: var(--font-bangla);
+    }
+    
+    .logo {
+      color: #1a73e8;
+      font-weight: 800;
+      font-size: 28px;
+      font-family: var(--font-bangla), 'Urbanist', sans-serif;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+      border: none;
+    }
+    
+    .btn-secondary {
+      background: linear-gradient(135deg, #00c853 0%, #00796b 100%);
+      border: none;
+    }
+    
+    .category-card {
+      border-left: 4px solid #1a73e8;
+    }
+    
+    .course-card {
+      border-top: 4px solid #1a73e8;
+    }
+    
+    .event-card {
+      border-top: 4px solid #00c853;
+    }
+    
+    .footer {
+      background: #0d47a1;
+      color: white;
+    }
+    
+    .footer-list-title {
+      color: #bbdefb;
+    }
+    
+    .footer-link {
+      color: #e3f2fd;
+    }
+    
+    .footer-link:hover {
+      color: white;
+    }
+    
+    .copyright {
+      background: rgba(0,0,0,0.2);
+      color: #bbdefb;
+    }
+    
+    .newsletter {
+      background: linear-gradient(rgba(13, 71, 161, 0.9), rgba(13, 71, 161, 0.9)), url('./assets/images/newsletter-bg.jpg');
+      background-size: cover;
+      color: white;
+    }
+    
+    .badge {
+      background: #ff9800;
+      color: white;
+    }
+    
+    .header {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+
+</head>
+
 <body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
 
   <header class="header" data-header>
     <div class="container">
+
       <h1>
-        <a href="#" class="logo">BRAC High School</a>
+        <a href="#" class="logo">শিক্ষাঘর</a>
       </h1>
 
       <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+          <a href="#" class="logo">শিক্ষাঘর</a>
+
+          <button class="nav-close-btn" aria-label="Close menu" data-nav-toggler>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+        </div>
+
         <ul class="navbar-list">
-          <li><a href="#home" class="navbar-link">হোম</a></li>
-          <li><a href="#about" class="navbar-link">আমাদের সম্পর্কে</a></li>
-          <li><a href="#notice" class="navbar-link">নোটিশ বোর্ড</a></li>
-          <li><a href="#administration" class="navbar-link">প্রশাসন</a></li>
-          <li><a href="#gallery" class="navbar-link">গ্যালারি</a></li>
-          <li><a href="#contact" class="navbar-link">যোগাযোগ</a></li>
+
+          <li class="navbar-item">
+            <a href="#home" class="navbar-link" data-nav-toggler>হোম</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#about" class="navbar-link" data-nav-toggler>আমাদের সম্পর্কে</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#courses" class="navbar-link" data-nav-toggler>কোর্সসমূহ</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#event" class="navbar-link" data-nav-toggler>ইভেন্ট</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#resources" class="navbar-link" data-nav-toggler>শিক্ষা উপকরণ</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#contact" class="navbar-link" data-nav-toggler>যোগাযোগ</a>
+          </li>
+
         </ul>
+
       </nav>
 
       <div class="header-actions">
-        <a href="#" class="btn btn-primary">ভর্তি ফরম</a>
-        <button class="nav-open-btn" aria-label="Open menu" data-nav-toggler>
+
+        <button class="header-action-btn" aria-label="Open search" data-search-toggler>
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+
+        <a href="#" class="header-action-btn login-btn">
+          <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+
+          <span class="span">লগইন / রেজিস্টার</span>
+        </a>
+
+        <button class="header-action-btn nav-open-btn" aria-label="Open menu" data-nav-toggler>
           <ion-icon name="menu-outline"></ion-icon>
         </button>
+
       </div>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
     </div>
   </header>
+
+
+
+
+
+  <!-- 
+    - #SEARCH BOX
+  -->
+
+  <div class="search-container" data-search-box>
+    <div class="container">
+
+      <button class="search-close-btn" aria-label="Close search" data-search-toggler>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+      <div class="search-wrapper">
+        <input type="search" name="search" placeholder="এখানে অনুসন্ধান করুন..." aria-label="Search" class="search-field">
+
+        <button class="search-submit" aria-label="Submit" data-search-toggler>
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
 
   <main>
     <article>
 
-      <section class="hero" id="home" style="background-image: url('./assets/images/school-building.jpg')">
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero" id="home" aria-label="hero" style="background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('./assets/images/hero-bg.jpg')">
         <div class="container">
+
           <div class="hero-content">
-            <p class="section-subtitle">স্থাপিত: ১৯৯৫</p>
-            <h2 class="h1 hero-title">জ্ঞানই আলো, শিক্ষাই শক্তি</h2>
-            <p class="hero-text">ব্র্যাক হাই স্কুল একটি আদর্শ শিক্ষা প্রতিষ্ঠান যেখানে নৈতিকতা ও আধুনিক শিক্ষার সমন্বয় ঘটে।</p>
-            <div class="btn-group">
-              <a href="#" class="btn btn-primary">ভর্তি তথ্য</a>
-              <a href="#" class="btn btn-secondary">ফলাফল দেখুন</a>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section class="section notice" id="notice">
-        <div class="container">
-          <div class="notice-wrapper" style="border: 2px solid #eee; padding: 20px; border-radius: 10px;">
-            <h3 class="h3 section-title" style="color: red;">সর্বশেষ নোটিশ</h3>
-            <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
-              <a href="#">১. বার্ষিক পরীক্ষা ২০২৪ এর সময়সূচী প্রকাশিত হয়েছে।</a> | 
-              <a href="#">২. ২০২৫ শিক্ষাবর্ষে ৬ষ্ঠ থেকে ৯ম শ্রেণিতে ভর্তি চলছে।</a> |
-              <a href="#">৩. আগামী রবিবার স্কুল পবিত্র ঈদ উপলক্ষে বন্ধ থাকবে।</a>
-            </marquee>
-          </div>
-        </div>
-      </section>
+            <p class="section-subtitle">আমাদের সাথে ভবিষ্যতের শিক্ষা</p>
 
-      <section class="section about" id="about">
-        <div class="container" style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center;">
-          <figure class="about-banner">
-            <img src="./assets/images/headmaster.jpg" alt="Headmaster" class="w-100" style="border-radius: 15px;">
-            <p style="text-align: center; margin-top: 10px;"><b>জনাব আব্দুল করিম</b><br>প্রধান শিক্ষক</p>
-          </figure>
-          <div class="about-content">
-            <h2 class="h2 section-title">প্রধান শিক্ষকের বাণী</h2>
-            <p class="section-text">
-              সুপ্রিয় শিক্ষার্থী ও অভিভাবকবৃন্দ, ডিজিটাল বাংলাদেশের সাথে তাল মিলিয়ে আমাদের স্কুল এখন অনলাইনের মাধ্যমে সকল তথ্য পৌঁছে দিচ্ছে। আমাদের লক্ষ্য কেবল পুঁথিগত বিদ্যা নয়, বরং একজন সুনাগরিক হিসেবে গড়ে তোলা...
+            <h2 class="h1 hero-title">ডিজিটাল বাংলাদেশের জন্য গুণগত শিক্ষা</h2>
+
+            <p class="hero-text bangla-text">
+              বাংলাদেশের স্কুল শিক্ষার্থীদের জন্য বিশেষভাবে তৈরি ডিজিটাল শিক্ষা প্ল্যাটফর্ম। এখানে আপনি পাবেন সকল শ্রেণির পাঠ্যক্রম, লাইভ ক্লাস, পরীক্ষার প্রস্তুতি এবং শিক্ষক সহায়তা।
             </p>
-            <a href="#" class="btn btn-primary">আরও পড়ুন</a>
+
+            <a href="#" class="btn btn-primary">
+              <span class="span">আজই শুরু করুন</span>
+
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+
           </div>
+
+          <figure class="hero-banner">
+
+            <img src="./assets/images/hero-banner.png" width="500" height="500" loading="lazy" alt="শিক্ষাঘর হিরো ইমেজ"
+              class="w-100">
+
+            <img src="./assets/images/hero-abs-1.png" width="318" height="352" loading="lazy" aria-hidden="true"
+              class="abs-img abs-img-1">
+
+            <img src="./assets/images/hero-abs-2.png" width="160" height="160" loading="lazy" aria-hidden="true"
+              class="abs-img abs-img-2">
+
+          </figure>
+
         </div>
       </section>
 
-      <section class="section stats" style="background-color: #f8f9fa;">
+
+
+
+
+      <!-- 
+        - #CATEGORY
+      -->
+
+      <section class="section category" aria-label="category">
         <div class="container">
-          <ul class="grid-list" style="display: grid; grid-template-columns: repeat(4, 1fr); text-align: center;">
-            <li><h2 class="h2">১২০০+</h2><p>শিক্ষার্থী</p></li>
-            <li><h2 class="h2">৪৫</h2><p>দক্ষ শিক্ষক</p></li>
-            <li><h2 class="h2">৯৮%</h2><p>পাশের হার</p></li>
-            <li><h2 class="h2">২০+</h2><p>ক্লাসরুম</p></li>
+
+          <p class="section-subtitle">বিষয়ভিত্তিক বিভাগ</p>
+
+          <h2 class="h2 section-title">প্রতিটি শ্রেণির জন্য বিশেষ কোর্স</h2>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="category-card">
+
+                <div class="card-icon">
+                  <ion-icon name="school-outline"></ion-icon>
+                </div>
+
+                <div>
+                  <h3 class="h3 card-title">
+                    <a href="#" class="bangla-text">প্রাথমিক শিক্ষা (১ম-৫ম শ্রেণি)</a>
+                  </h3>
+
+                  <span class="card-meta bangla-text">২৪টি কোর্স</span>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="category-card">
+
+                <div class="card-icon">
+                  <ion-icon name="library-outline"></ion-icon>
+                </div>
+
+                <div>
+                  <h3 class="h3 card-title">
+                    <a href="#" class="bangla-text">মাধ্যমিক শিক্ষা (৬ষ্ঠ-১০ম শ্রেণি)</a>
+                  </h3>
+
+                  <span class="card-meta bangla-text">৩৮টি কোর্স</span>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="category-card">
+
+                <div class="card-icon">
+                  <ion-icon name="trophy-outline"></ion-icon>
+                </div>
+
+                <div>
+                  <h3 class="h3 card-title">
+                    <a href="#" class="bangla-text">এসএসসি প্রস্তুতি</a>
+                  </h3>
+
+                  <span class="card-meta bangla-text">১৮টি কোর্স</span>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="category-card">
+
+                <div class="card-icon">
+                  <ion-icon name="calculator-outline"></ion-icon>
+                </div>
+
+                <div>
+                  <h3 class="h3 card-title">
+                    <a href="#" class="bangla-text">গণিত ও বিজ্ঞান</a>
+                  </h3>
+
+                  <span class="card-meta bangla-text">২২টি কোর্স</span>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="category-card">
+
+                <div class="card-icon">
+                  <ion-icon name="language-outline"></ion-icon>
+                </div>
+
+                <div>
+                  <h3 class="h3 card-title">
+                    <a href="#" class="bangla-text">বাংলা ও ইংরেজি</a>
+                  </h3>
+
+                  <span class="card-meta bangla-text">২০টি কোর্স</span>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="category-card">
+
+                <div class="card-icon">
+                  <ion-icon name="earth-outline"></ion-icon>
+                </div>
+
+                <div>
+                  <h3 class="h3 card-title">
+                    <a href="#" class="bangla-text">সামাজিক বিজ্ঞান</a>
+                  </h3>
+
+                  <span class="card-meta bangla-text">১৫টি কোর্স</span>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="category-card">
+
+                <div class="card-icon">
+                  <ion-icon name="code-slash-outline"></ion-icon>
+                </div>
+
+                <div>
+                  <h3 class="h3 card-title">
+                    <a href="#" class="bangla-text">ডিজিটাল লিটারেসি</a>
+                  </h3>
+
+                  <span class="card-meta bangla-text">১২টি কোর্স</span>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="category-card">
+
+                <div class="card-icon">
+                  <ion-icon name="book-outline"></ion-icon>
+                </div>
+
+                <div>
+                  <h3 class="h3 card-title">
+                    <a href="#" class="bangla-text">ইসলাম ও নৈতিক শিক্ষা</a>
+                  </h3>
+
+                  <span class="card-meta bangla-text">১০টি কোর্স</span>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="category-card">
+
+                <div class="card-icon">
+                  <ion-icon name="musical-notes-outline"></ion-icon>
+                </div>
+
+                <div>
+                  <h3 class="h3 card-title">
+                    <a href="#" class="bangla-text">সংগীত ও শিল্পকলা</a>
+                  </h3>
+
+                  <span class="card-meta bangla-text">৮টি কোর্স</span>
+                </div>
+
+              </div>
+            </li>
+
           </ul>
+
         </div>
       </section>
 
-      </article>
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" id="about" aria-label="about">
+        <div class="container">
+
+          <figure class="about-banner">
+
+            <img src="./assets/images/about-banner.jpg" width="450" height="590" loading="lazy" alt="আমাদের সম্পর্কে"
+              class="w-100 about-img">
+
+            <img src="./assets/images/about-abs-1.jpg" width="188" height="242" loading="lazy" aria-hidden="true"
+              class="abs-img abs-img-1">
+
+            <img src="./assets/images/about-abs-2.jpg" width="150" height="200" loading="lazy" aria-hidden="true"
+              class="abs-img abs-img-2">
+
+          </figure>
+
+          <div class="about-content">
+
+            <p class="section-subtitle">আমরা কারা</p>
+
+            <h2 class="h2 section-title">বাংলাদেশের স্কুল শিক্ষার্থীদের জন্য সেরা প্ল্যাটফর্ম</h2>
+
+            <ul class="about-list">
+
+              <li class="about-item">
+
+                <div class="item-icon item-icon-1">
+                  <img src="./assets/images/about-icon-1.png" width="30" height="30" loading="lazy" aria-hidden="true">
+                </div>
+
+                <div>
+                  <h3 class="h3 item-title bangla-text">বিশেষজ্ঞ শিক্ষক</h3>
+
+                  <p class="item-text bangla-text">
+                    সরকারি স্কুল, কলেজ এবং বিশ্ববিদ্যালয়ের অভিজ্ঞ শিক্ষকদের দ্বারা তৈরি কোর্সসমূহ। প্রতিটি বিষয়ে বিশেষজ্ঞদের সরাসরি মেন্টরশিপ।
+                  </p>
+                </div>
+
+              </li>
+
+              <li class="about-item">
+
+                <div class="item-icon item-icon-2">
+                  <img src="./assets/images/about-icon-2.png" width="30" height="30" loading="lazy" aria-hidden="true">
+                </div>
+
+                <div>
+                  <h3 class="h3 item-title bangla-text">এনসিটিবি কারিকুলাম অনুসরণ</h3>
+
+                  <p class="item-text bangla-text">
+                    জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (এনসিটিবি) এর সর্বশেষ পাঠ্যক্রম অনুসারে সকল কোর্স তৈরি করা হয়েছে।
+                  </p>
+                </div>
+
+              </li>
+
+              <li class="about-item">
+
+                <div class="item-icon item-icon-3">
+                  <img src="./assets/images/about-icon-3.png" width="30" height="30" loading="lazy" aria-hidden="true">
+                </div>
+
+                <div>
+                  <h3 class="h3 item-title bangla-text">ইন্টারেক্টিভ লার্নিং</h3>
+
+                  <p class="item-text bangla-text">
+                    ভিডিও লেকচার, কুইজ, ইন্টারেক্টিভ এসাইনমেন্ট এবং লাইভ ক্লাসের মাধ্যমে আকর্ষণীয় শিক্ষা পরিবেশ।
+                  </p>
+                </div>
+
+              </li>
+
+            </ul>
+
+            <a href="#" class="btn btn-primary">
+              <span class="span bangla-text">আরও জানুন</span>
+
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #COURSE
+      -->
+
+      <section class="section course" id="courses" aria-label="course"
+        style="background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('./assets/images/course-bg.jpg')">
+        <div class="container">
+
+          <p class="section-subtitle">জনপ্রিয় কোর্স</p>
+
+          <h2 class="h2 section-title">শিক্ষার্থীদের পছন্দের কোর্সসমূহ</h2>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="course-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/course-1.jpg" width="370" height="270" loading="lazy"
+                    alt="নবম-দশম শ্রেণির সাধারণ গণিত" class="img-cover">
+                </figure>
+
+                <div class="card-actions">
+
+                  <span class="badge bangla-text">মাধ্যমিক</span>
+
+                  <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
+                    <ion-icon name="heart"></ion-icon>
+                  </button>
+
+                </div>
+
+                <div class="card-content">
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="reader-outline" aria-hidden="true"></ion-icon>
+
+                      <span class="card-meta-text bangla-text">৪৮টি লেসন</span>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+
+                      <time datetime="PT18H15M44S" class="card-meta-text bangla-text">৩৬ ঘণ্টা</time>
+                    </li>
+
+                  </ul>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title bangla-text">নবম-দশম শ্রেণির সাধারণ গণিত</a>
+                  </h3>
+
+                  <div class="rating-wrapper">
+
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <span class="rating-text bangla-text">(১২৮ রিভিউ)</span>
+
+                  </div>
+
+                  <div class="card-footer">
+
+                    <div class="card-price">
+                      <span class="span bangla-text">ফ্রি</span>
+                    </div>
+
+                    <div class="card-meta-item">
+                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+
+                      <span class="card-meta-text bangla-text">১৫৭২ শিক্ষার্থী</span>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="course-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/course-2.jpg" width="370" height="270" loading="lazy"
+                    alt="এসএসসি ইংরেজি প্রস্তুতি" class="img-cover">
+                </figure>
+
+                <div class="card-actions">
+
+                  <span class="badge bangla-text">এসএসসি</span>
+
+                  <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
+                    <ion-icon name="heart"></ion-icon>
+                  </button>
+
+                </div>
+
+                <div class="card-content">
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="reader-outline" aria-hidden="true"></ion-icon>
+
+                      <span class="card-meta-text bangla-text">৩২টি লেসন</span>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+
+                      <time datetime="PT18H15M44S" class="card-meta-text bangla-text">২৪ ঘণ্টা</time>
+                    </li>
+
+                  </ul>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title bangla-text">এসএসসি ইংরেজি প্রথম ও দ্বিতীয় পত্র</a>
+                  </h3>
+
+                  <div class="rating-wrapper">
+
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <span class="rating-text bangla-text">(৯৫ রিভিউ)</span>
+
+                  </div>
+
+                  <div class="card-footer">
+
+                    <div class="card-price">
+                      <span class="span bangla-text">৳ ৫০০</span>
+
+                      <del class="del bangla-text">৳ ১০০০</del>
+                    </div>
+
+                    <div class="card-meta-item">
+                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+
+                      <span class="card-meta-text bangla-text">৮৪৫ শিক্ষার্থী</span>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="course-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/course-3.jpg" width="370" height="270" loading="lazy"
+                    alt="পঞ্চম শ্রেণি প্রাথমিক বিজ্ঞান" class="img-cover">
+                </figure>
+
+                <div class="card-actions">
+
+                  <span class="badge bangla-text">প্রাথমিক</span>
+
+                  <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
+                    <ion-icon name="heart"></ion-icon>
+                  </button>
+
+                </div>
+
+                <div class="card-content">
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="reader-outline" aria-hidden="true"></ion-icon>
+
+                      <span class="card-meta-text bangla-text">৪০টি লেসন</span>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+
+                      <time datetime="PT18H15M44S" class="card-meta-text bangla-text">২০ ঘণ্টা</time>
+                    </li>
+
+                  </ul>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title bangla-text">পঞ্চম শ্রেণি প্রাথমিক বিজ্ঞান</a>
+                  </h3>
+
+                  <div class="rating-wrapper">
+
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <span class="rating-text bangla-text">(২১০ রিভিউ)</span>
+
+                  </div>
+
+                  <div class="card-footer">
+
+                    <div class="card-price">
+                      <span class="span bangla-text">ফ্রি</span>
+                    </div>
+
+                    <div class="card-meta-item">
+                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+
+                      <span class="card-meta-text bangla-text">২৩১০ শিক্ষার্থী</span>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="course-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/course-4.jpg" width="370" height="270" loading="lazy"
+                    alt="অষ্টম শ্রেণি বাংলাদেশ ও বিশ্বপরিচয়" class="img-cover">
+                </figure>
+
+                <div class="card-actions">
+
+                  <span class="badge bangla-text">জুনিয়র</span>
+
+                  <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
+                    <ion-icon name="heart"></ion-icon>
+                  </button>
+
+                </div>
+
+                <div class="card-content">
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="reader-outline" aria-hidden="true"></ion-icon>
+
+                      <span class="card-meta-text bangla-text">৩৫টি লেসন</span>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+
+                      <time datetime="PT18H15M44S" class="card-meta-text bangla-text">২৮ ঘণ্টা</time>
+                    </li>
+
+                  </ul>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title bangla-text">অষ্টম শ্রেণি বাংলাদেশ ও বিশ্বপরিচয়</a>
+                  </h3>
+
+                  <div class="rating-wrapper">
+
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <span class="rating-text bangla-text">(১৭৮ রিভিউ)</span>
+
+                  </div>
+
+                  <div class="card-footer">
+
+                    <div class="card-price">
+                      <span class="span bangla-text">৳ ৩০০</span>
+                    </div>
+
+                    <div class="card-meta-item">
+                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+
+                      <span class="card-meta-text bangla-text">১১২৫ শিক্ষার্থী</span>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="course-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/course-5.jpg" width="370" height="270" loading="lazy"
+                    alt="সপ্তম শ্রেণি তথ্য ও যোগাযোগ প্রযুক্তি" class="img-cover">
+                </figure>
+
+                <div class="card-actions">
+
+                  <span class="badge bangla-text">মাধ্যমিক</span>
+
+                  <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
+                    <ion-icon name="heart"></ion-icon>
+                  </button>
+
+                </div>
+
+                <div class="card-content">
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="reader-outline" aria-hidden="true"></ion-icon>
+
+                      <span class="card-meta-text bangla-text">৩০টি লেসন</span>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+
+                      <time datetime="PT18H15M44S" class="card-meta-text bangla-text">২৫ ঘণ্টা</time>
+                    </li>
+
+                  </ul>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title bangla-text">সপ্তম শ্রেণি তথ্য ও যোগাযোগ প্রযুক্তি</a>
+                  </h3>
+
+                  <div class="rating-wrapper">
+
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <span class="rating-text bangla-text">(৩০৫ রিভিউ)</span>
+
+                  </div>
+
+                  <div class="card-footer">
+
+                    <div class="card-price">
+                      <span class="span bangla-text">ফ্রি</span>
+                    </div>
+
+                    <div class="card-meta-item">
+                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+
+                      <span class="card-meta-text bangla-text">২৯০০ শিক্ষার্থী</span>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="course-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/course-6.jpg" width="370" height="270" loading="lazy"
+                    alt="ষষ্ঠ শ্রেণি বাংলা ব্যাকরণ" class="img-cover">
+                </figure>
+
+                <div class="card-actions">
+
+                  <span class="badge bangla-text">জুনিয়র</span>
+
+                  <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
+                    <ion-icon name="heart"></ion-icon>
+                  </button>
+
+                </div>
+
+                <div class="card-content">
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="reader-outline" aria-hidden="true"></ion-icon>
+
+                      <span class="card-meta-text bangla-text">৪৫টি লেসন</span>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+
+                      <time datetime="PT18H15M44S" class="card-meta-text bangla-text">৩৫ ঘণ্টা</time>
+                    </li>
+
+                  </ul>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title bangla-text">ষষ্ঠ শ্রেণি বাংলা ব্যাকরণ ও নির্মিতি</a>
+                  </h3>
+
+                  <div class="rating-wrapper">
+
+                    <div class="rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <span class="rating-text bangla-text">(২৪৫ রিভিউ)</span>
+
+                  </div>
+
+                  <div class="card-footer">
+
+                    <div class="card-price">
+                      <span class="span bangla-text">৳ ৪০০</span>
+
+                      <del class="del bangla-text">৳ ৮০০</del>
+                    </div>
+
+                    <div class="card-meta-item">
+                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+
+                      <span class="card-meta-text bangla-text">১৬৫০ শিক্ষার্থী</span>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+          <a href="#" class="btn btn-primary">
+            <span class="span bangla-text">সকল কোর্স দেখুন</span>
+
+            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+          </a>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #CTA
+      -->
+
+      <section class="section cta" aria-label="workshop" style="background-image: linear-gradient(rgba(26, 115, 232, 0.9), rgba(26, 115, 232, 0.9)), url('./assets/images/cta-bg.png')">
+        <div class="container">
+
+          <figure class="cta-banner">
+            <img src="./assets/images/cta-banner.jpg" width="580" height="380" loading="lazy" alt="বিনামূল্যে কর্মশালা"
+              class="img-cover">
+          </figure>
+
+          <div class="cta-content" style="color: white;">
+
+            <p class="section-subtitle">বিনামূল্যে লাইভ কর্মশালা</p>
+
+            <h2 class="h2 section-title">শিক্ষার্থীদের জন্য বিশেষ সেশন</h2>
+
+            <p class="section-text bangla-text">
+              প্রতি শুক্রবার আমরা আয়োজন করি বিনামূল্যের লাইভ ক্লাস ও কর্মশালা। বিশেষজ্ঞ শিক্ষকদের সরাসরি উপস্থাপনায় পাঠদান, প্রশ্নোত্তর পর্ব এবং পরীক্ষার প্রস্তুতি নির্দেশিকা।
+            </p>
+
+            <a href="#" class="btn btn-secondary">
+              <span class="span bangla-text">আসন্ন কর্মশালা</span>
+
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #EVENT
+      -->
+
+      <section class="section event" id="event" aria-label="event">
+        <div class="container">
+
+          <p class="section-subtitle">আসন্ন ইভেন্ট</p>
+
+          <h2 class="h2 section-title">আমাদের শিক্ষা সম্প্রদায়ে যোগ দিন</h2>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="event-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/event-1.jpg" width="370" height="250" loading="lazy"
+                    alt="এসএসসি পরীক্ষার্থীদের বিশেষ পরামর্শ সভা" class="img-cover">
+                </figure>
+
+                <time class="badge" datetime="2023-09-15">১৫ সেপ্টেম্বর ২০২৩</time>
+
+                <div class="card-content">
+
+                  <address class="card-address">
+                    <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+
+                    <span class="span bangla-text">অনলাইন লাইভ সেশন</span>
+                  </address>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title bangla-text">এসএসসি পরীক্ষার্থীদের বিশেষ পরামর্শ সভা</a>
+                  </h3>
+
+                  <a href="#" class="btn-link">
+                    <span class="span bangla-text">রেজিস্ট্রেশন করুন</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="event-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/event-2.jpg" width="370" height="250" loading="lazy"
+                    alt="পিইসি প্রস্তুতি: শেষ মুহূর্তের নির্দেশনা" class="img-cover">
+                </figure>
+
+                <time class="badge" datetime="2023-10-10">১০ অক্টোবর ২০২৩</time>
+
+                <div class="card-content">
+
+                  <address class="card-address">
+                    <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+
+                    <span class="span bangla-text">ঢাকা, বাংলাদেশ</span>
+                  </address>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title bangla-text">পিইসি প্রস্তুতি: শেষ মুহূর্তের নির্দেশনা</a>
+                  </h3>
+
+                  <a href="#" class="btn-link">
+                    <span class="span bangla-text">রেজিস্ট্রেশন করুন</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="event-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/event-3.jpg" width="370" height="250" loading="lazy"
+                    alt="শিক্ষকদের জন্য ডিজিটাল শিক্ষা প্রশিক্ষণ" class="img-cover">
+                </figure>
+
+                <time class="badge" datetime="2023-11-05">৫ নভেম্বর ২০২৩</time>
+
+                <div class="card-content">
+
+                  <address class="card-address">
+                    <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+
+                    <span class="span bangla-text">অনলাইন ও অফলাইন</span>
+                  </address>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title bangla-text">শিক্ষকদের জন্য ডিজিটাল শিক্ষা প্রশিক্ষণ</a>
+                  </h3>
+
+                  <a href="#" class="btn-link">
+                    <span class="span bangla-text">রেজিস্ট্রেশন করুন</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #NEWSLETTER
+      -->
+
+      <section class="section newsletter" aria-label="newsletter"
+        style="background-image: linear-gradient(rgba(13, 71, 161, 0.9), rgba(13, 71, 161, 0.9)), url('./assets/images/newsletter-bg.jpg')">
+        <div class="container">
+
+          <p class="section-subtitle">নিউজলেটার সাবস্ক্রাইব করুন</p>
+
+          <h2 class="h2 section-title">সর্বশেষ আপডেট পেতে যোগ দিন</h2>
+
+          <form action="" class="newsletter-form">
+
+            <div class="input-wrapper">
+              <input type="email" name="email_address" aria-label="email" placeholder="আপনার ইমেইল ঠিকানা লিখুন" required
+                class="email-field">
+
+              <ion-icon name="mail-open-outline" aria-hidden="true"></ion-icon>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              <span class="span bangla-text">সাবস্ক্রাইব</span>
+
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </button>
+
+          </form>
+
+        </div>
+      </section>
+
+    </article>
   </main>
 
-  </body>
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-top">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">শিক্ষাঘর</a>
+
+          <p class="section-text bangla-text">
+            বাংলাদেশের স্কুল শিক্ষার্থীদের জন্য একটি সম্পূর্ণ ডিজিটাল শিক্ষা প্ল্যাটফর্ম। আমরা গুণগত শিক্ষা উপকরণ, বিশেষজ্ঞ শিক্ষক এবং আধুনিক শিক্ষা পদ্ধতি নিয়ে কাজ করি।
+          </p>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title bangla-text">এক্সপ্লোর করুন</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+              <span class="span bangla-text">আমাদের সম্পর্কে</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+              <span class="span bangla-text">আসন্ন ইভেন্ট</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+              <span class="span bangla-text">ব্লগ ও খবর</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+              <span class="span bangla-text">সাধারণ প্রশ্ন</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+              <span class="span bangla-text">শিক্ষার্থীদের মতামত</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+              <span class="span bangla-text">গোপনীয়তা নীতি</span>
+            </a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title bangla-text">গুরুত্বপূর্ণ লিংক</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+              <span class="span bangla-text">যোগাযোগ</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+              <span class="span bangla-text">মূল্যসূচি</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+              <span class="span bangla-text">শিক্ষক প্রোফাইল</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+              <span class="span bangla-text">সহায়িকা</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+              <span class="span bangla-text">জনপ্রিয় কোর্স</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">
+              <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+              <span class="span bangla-text">শর্তাবলী</span>
+            </a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title bangla-text">যোগাযোগ তথ্য</p>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+
+            <address class="footer-link bangla-text">
+              হাউস #১৫, রোড #১০, ধানমন্ডি, ঢাকা-১২০৫
+            </address>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="call" aria-hidden="true"></ion-icon>
+
+            <a href="tel:+8801712345678" class="footer-link bangla-text">+৮৮০ ১৭১২-৩৪৫৬৭৮</a>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="call" aria-hidden="true"></ion-icon>
+
+            <a href="tel:+8801812345679" class="footer-link bangla-text">+৮৮০ ১৮১২-৩৪৫৬৭৯</a>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+
+            <a href="mailto:info@shikkhaghor.com" class="footer-link">info@shikkhaghor.com</a>
+          </li>
+
+          <li class="footer-item">
+            <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+
+            <span class="footer-link bangla-text">শনি-বৃহস্পতি: সকাল ৯টা - রাত ৯টা</span>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright bangla-text">
+          কপিরাইট © ২০২৩ শিক্ষাঘর। সর্বস্বত্ব সংরক্ষিত। বাংলাদেশের স্কুল শিক্ষার্থীদের জন্য ডিজাইন করা হয়েছে।
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="Back to top" data-back-top-btn>
+    <ion-icon name="arrow-up"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
